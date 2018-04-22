@@ -27,21 +27,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "unity.h"
+#include "unity_fixture.h"
 
 #include "example/example.h"
 
-void test_example_new_with_cstr(void) {
-    char *key = "test_key";
-    char *val = "test_val";
-    example_s *example = example_new_with_cstr(key, val);
+static char *key = "test_key";
+static char *val = "test_val";
+static example_s *example = NULL;
+
+TEST_GROUP(example);
+
+TEST_SETUP(example) {
+    example = example_new_with_cstr(key, val);
+}
+
+TEST_TEAR_DOWN(example) {
+    if (example) {
+        example_free(example);
+    }
+}
+
+TEST(example, test_example_new_with_cstr) {
     TEST_ASSERT_EQUAL_STRING(key, example->key);
     TEST_ASSERT_EQUAL_STRING(val, example->val);
-    example_free(example);
+}
+
+TEST_GROUP_RUNNER(example) {
+    RUN_TEST_CASE(example, test_example_new_with_cstr);
 }
 
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_example_new_with_cstr);
+    RUN_TEST_GROUP(example);
     return UNITY_END();
 }
