@@ -30,8 +30,8 @@
 
 #include "example/example.h"
 
-example_s * example_new_with_cstr(char *key, char *val) {
-    example_s *ret = (example_s *) calloc(1, sizeof(example_s));
+example_t * example_new_with_cstr(char *key, char *val) {
+    example_t *ret = (example_t *) calloc(1, sizeof(example_t));
     if (!ret) {
         return NULL;
     }
@@ -61,12 +61,12 @@ cleanup_ret:
     return NULL;
 }
 
-void example_print_cstr(example_s *example) {
+void example_print_cstr(example_t *example) {
     printf("key: %s (%lu bytes)\n", example->key, example->key_length);
     printf("val: %s (%lu bytes)\n", example->val, example->val_length);
 }
 
-void example_free(example_s *example) {
+void example_free(example_t *example) {
     if (example != NULL) {
         if (example->key != NULL) {
             free(example->key);

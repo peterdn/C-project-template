@@ -32,7 +32,7 @@
 int main(int argc, char *argv[]) {
     printf("Hello, example!\n");
 
-    example_s *example = example_new_with_cstr("test_key", "test_value");
+    example_t *example = example_new_with_cstr("test_key", "test_value");
     example_print_cstr(example);
     example_free(example);
 

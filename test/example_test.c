@@ -33,7 +33,7 @@
 
 static char *key = "test_key";
 static char *val = "test_val";
-static example_s *example = NULL;
+static example_t *example = NULL;
 
 TEST_GROUP(example);
 
