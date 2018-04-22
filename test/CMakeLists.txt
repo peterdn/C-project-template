@@ -22,9 +22,15 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
+# Include Unity test framework.
 add_subdirectory(unity)
 
-add_executable(example_test
+#####################################
+# Configure an example test binary. #
+#####################################
+
+add_executable(
+    example_test
     example_test.c
 )
 

@@ -22,6 +22,10 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
+##############################################################
+# Configure an executable that links to the example library. #
+##############################################################
+
 add_executable(
     example_app
     example_app.c

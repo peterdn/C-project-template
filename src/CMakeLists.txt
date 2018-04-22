@@ -22,6 +22,10 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
+########################################
+# Configure an example shared library. #
+########################################
+
 add_library(example SHARED
   example.c
 )
