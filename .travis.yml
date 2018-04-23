@@ -1,17 +1,7 @@
-stages:
-  - build
-  - test
-
 language: c
 compiler:
   - clang
   - gcc
 dist: trusty
 sudo: false
-
-jobs:
-  include:
-    - stage: build
-      script: cd build && cmake .. && make
-    - stage: test
-      script: make test
+script: cd build && cmake .. && make && make test
