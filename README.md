@@ -1,4 +1,4 @@
-# C project template
+# C project template [![Build Status](https://travis-ci.org/peterdn/C-project-template.svg?branch=master)](https://travis-ci.org/peterdn/C-project-template)
 
 This is a C project template with the following features:
 
