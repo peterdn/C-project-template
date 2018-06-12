@@ -43,14 +43,14 @@ example_t * example_new_with_cstr(char *key, char *val) {
     if (!ret->key) {
         goto cleanup_ret;
     }
-    strncpy(ret->key, key, ret->key_length);
+    strncpy((char *)ret->key, key, ret->key_length);
 
 
     ret->val = (uint8_t *) calloc(ret->val_length, sizeof(char));
     if (!ret->val) {
         goto cleanup_key;
     }
-    strncpy(ret->val, val, ret->val_length);
+    strncpy((char *)ret->val, val, ret->val_length);
 
     return ret;
 
